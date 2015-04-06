@@ -58,7 +58,6 @@
     puts char*20
   end
 
-  # Sign in as a registered user
   # Go to the user settings and Change password
   def change_password(user,password,new_password,message)
     @driver.find_element(class: 'my-account').click
@@ -75,7 +74,6 @@
     print_separator
   end
 
-  # Sign in as a registered user
   # Create a Project
   def create_project(project,message)
     @driver.find_element(class: 'projects').click
@@ -96,7 +94,6 @@
     print_separator
   end
 
-  # Sign in as a registered user
   # Go to Projects and find your Project
   # Add a New Member to the Project
   def add_member(project,new_member,role)
@@ -127,10 +124,8 @@
     print_separator
   end
 
-  # Sign in as a registered user
   # Go to Projects and find your Project
   # Add a New Version to the Project
-  # Then Log out
   def create_project_version(project,version_name,message)
     @driver.find_element(class: 'projects').click
 
@@ -150,10 +145,8 @@
     print_separator
   end
 
-  # Sign in as a registered user
   # Go to Projects and find your Project
   # Add all types of issues to the Project
-  # Then Log out
   def add_issues(project,subject)
     @driver.find_element(class: 'projects').click
     @driver.find_element(link_text: project).click
@@ -205,11 +198,11 @@
   #add_member(project,new_member,role)
   add_member('pr_2006','2005','Reporter')
 
-  #create_project_version(project,version_name)
+  #create_project_version(project,version_name,message)
   create_project_version('pr_2006','Version_2006','Successful creation.')
 
   #add_issues(project,subject)
   add_issues('pr_2006','Subject_2006')
 
-  #change_password(user,password,new_password)
+  #change_password(user,password,new_password,message)
   change_password('2006','2006','2006_1','Password was successfully updated.')
